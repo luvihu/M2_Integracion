@@ -1,0 +1,8 @@
+.cardsItem {
+  max-width: 80vw;
+  margin-bottom: 30px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+}

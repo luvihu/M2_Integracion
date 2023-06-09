@@ -1,0 +1,28 @@
+
+.searchConten {
+  margin-top: 30px;
+  height: 30px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.searchInp {
+  width: 180px;
+  padding: 12px 20px;
+  border: solid #39ff14 1px;
+  border-radius: 7px 0px 0px 7px;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 5px #808080;
+}
+
+.searchBtn {
+  width: 80px;
+  height: 30px;
+  fill: #39ff14;
+}
+.searchBtn:hover {
+  scale: 1.1;
+}
+
