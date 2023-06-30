@@ -1,29 +1,70 @@
 .navConten {
   display: flex;
-  margin-bottom: 25px;
+  block-size: 12rem;
+  inline-size: 100vw;
   flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  border-top: solid #39ff14 1px;
-  border-bottom: solid #39ff14 1px;
-  padding: 5px 0px;
+  justify-content: space-around;
+  padding-block-end: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  /* border-bottom: 0.5px dashed #0e0234; */
 }
+
 
 .random {
-  position: relative;
-  left: 0px;
-  border-radius: 5px;
-  border: solid #39ff14 1px;
-  background: rgb(44, 46, 49);
-  color: #39ff14;
-  font-size: 15px;
-  max-width: 200px;
-  min-width: 200px;
-  max-height: 60px;
-  min-height: 60px;
+ inline-size: 8.5rem;
+  block-size: 2.5rem;
+  margin-block-start: -1rem;
+  border: 1px solid #2b03ae;
+  background-color: #eda126;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 0.5rem; 
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.random:hover {
-  box-shadow: inset 0 0 10px #39ff14;
+.random:active {
+  transform: scale(1.1); 
   font-size: 20px;
+ }
+
+ .random:hover {
+  background-color: #e8be7b;
+  box-shadow: inset 0 0 10px #2b03ae;
+ }
+
+
+.navLink {
+  display: flex;
+  block-size: 9rem;
+  inline-size: 35rem;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.navLink button {
+  inline-size: 6rem;
+  block-size: 2.5rem;
+  border: 1px solid #2b03ae;
+  background-color: #eda126;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 0.5rem; 
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.navLink button:active {
+  transform: scale(1.1); 
+  font-size: 20px;
+}
+
+.navLink button:hover {
+  background-color: #dcf471;
 }

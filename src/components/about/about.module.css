@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: 'Merienda';
+  src: url("../../fuentes/Merienda-Bold.ttf");
+  font-style: bold;
+  font-weight: bold;
+}
+
+.datos {
+  display: flex;
+  inline-size: 85rem;
+  block-size:auto;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+.datos h1 {
+  font-family: 'Merienda';
+  font-weight: bold;
+  color: #903707;
+   font-size: 8rem;
+  
+}

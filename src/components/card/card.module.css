@@ -1,79 +1,114 @@
 
+@font-face {
+  font-family: 'Merienda';
+  src: url("../../fuentes/Merienda-Bold.ttf");
+  font-style: bold;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Merienda';
+  src: url("../../fuentes/Merienda-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
 .cardConten {
   display: flex;
-  flex-direction: column;
-  align-items: center;
- /* background-image: */
-  background-position: center;
-  width: auto;
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 20px;
-  cursor: pointer;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out;
+  flex-direction: row;
+  block-size: 18.75rem;
+  inline-size: 25rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  overflow: hidden;
+   background: rgba(1, 18, 33, 0.7);
+   border: 1px solid #0f011b;;
+   transition: all 0.2s;
 }
 
 .cardConten:hover {
-  transform: scale(1.05);
-}
-
-.atrib {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  font-size: small;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-.closeButn {
-  opacity: 0.7;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-
-.closeButn:hover {
-  background-color: red;
-  color: white;
+  transform: scale(0.95) rotate(3deg);
+   
 }
 
 .imageConten {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  margin-bottom: 5px;
+
+  display: flex;
+  flex-direction: column;
+   gap: 0.5rem;
+   margin-block-start: 0.25rem;
+    }
+
+.imageConten img {
+  inline-size: 12.5rem;
+  block-size: 13.5rem;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  transition: all 0.8s;
+     
 }
 
-.name {
+.imageConten img:hover {
+  transform: rotateY(180deg);
+  
+}
+
+
+.imageConten h2 {
+  font-family: 'Merienda';
+  font-weight: bold;
+   margin: 0;
+   color: #eea6e3;
+   text-decoration:underline;
+}
+
+
+.imageConten h2:hover {
+  transform: scale(1.1);
+  
+}
+
+.closeButn {
+ margin-inline-end: -1rem; 
+ margin-block-start: 0;
+ 
+
+}
+
+.closeButn button {
+  opacity: 0.8;
   position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease-in-out; /* Animation to fade in */
-  -ms-transition: all 0.3s ease-in-out; /* Animation to fade in */
-  transition: all 0.3s ease-in-out; /* Animation to fade in */
+  right: 0;
+  top: 0;
+  border-radius: 0.25rem;
+  
+}
+.closeButn button:hover {
+  background-color: #f55804;;
+  color: #ece4eb;
 }
 
-.imgI {
-  display: block;
-  width: 100%;
-  height: auto;
-  -webkit-transition: all 0.3s ease-in-out; /* Animation to fade in */
-  -ms-transition: all 0.3s ease-in-out; /* Animation to fade in */
-  transition: all 0.3s ease-in-out;
+.fav {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+.atrib {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-block-start: 1rem;
+    
 }
 
-.imageConten:hover .imgI {
-  opacity: 0.4;
+
+.atrib h2 {
+  font-family: 'Merienda';
+  font-weight: normal;
+  color: #dcb278;
+  
 }
 
-.imageConten:hover .name {
-  opacity: 1;
-}
+
+

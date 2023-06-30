@@ -22,12 +22,14 @@ useEffect(() => {
   });
   return setCharacter({});
 }, [id]);
+// este código es el que buscará al personaje de la API cada vez 
+//que el componente se monte. Y luego, cada vez que se desmonte, borrará su información.
 
   return (
     <div className='detailConten'>
       <div className='imgConten'>
-      <h2>{character.name}</h2>
       <img src={character.image} alt={character.image} />
+      <h2>{character.name}</h2>
       </div>
       <div className="details">
       <div>

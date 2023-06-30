@@ -23,7 +23,7 @@ export default function validate(userData) {
 
    if (!/.*\d+.*/.test(userData.password)) {
     errors.password = "El password debe tener al menos un número"};
-  //}  ESTO LO AGREGO CUANDO YA HAYA UNA DATA DE REGISTRO
+  
 
    if (userData.password.length < 6 || userData.password.length > 10) {
     errors.password = "Pasword tiene que tener una longitud entre 6 y 10 caracteres"

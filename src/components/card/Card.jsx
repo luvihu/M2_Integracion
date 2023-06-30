@@ -19,31 +19,34 @@ import { addFavorite, removeFavorite } from '../../redux/actions';
       }
    };
 
+   //if (data.name && !characters.find((charater) => charater.id === data.id))
+
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
             setIsFav(true);
-         }
+         } 
       });
    }, [myFavorites]);
    
    
    return (
       <div className={style.cardConten}>
-         <button onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
          <div className={style.imageConten}>
-          <img className={style.imageI} src={image} alt={name}/> 
-          <button className={style.closeButn} onClick={()=>onClose(id)}>X</button> 
-          <Link to={`/detail/${id}`}>
-            <h2 className={style.name}>{name}</h2>
+         <button className={style.fav} onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
+                    <Link to={`/detail/${id}`}>
+            <h2 >{name}</h2>
             </Link>
+          <img src={image} alt={name}/> 
+          
         </div>
         <div className={style.atrib}>
+         <div className={style.closeButn}>
+        <button  onClick={()=>onClose(id)}>X</button>
+         </div>
          <h2>Especie: {species}</h2>
          <h2>Género: {gender}</h2>
-         <h2>Origen: {origin}</h2>
-         <h2>Estatus: {status}</h2>
-         
+             
          </div>
       </div>
    );

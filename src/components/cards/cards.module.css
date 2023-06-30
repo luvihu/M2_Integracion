@@ -1,8 +1,11 @@
+
 .cardsItem {
-  max-width: 80vw;
-  margin-bottom: 30px;
-  padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 2rem;
+  block-size:auto;
+  max-inline-size: 85rem;
+  margin-block-start: 2.5rem;
+  
 }

@@ -1,32 +1,87 @@
 
+@font-face {
+  font-family: 'Merienda';
+  src: url("../../fuentes/Merienda-Bold.ttf");
+  font-style: bold;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Merienda';
+  src: url("../../fuentes/Merienda-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
 .detailConten {
   display: flex;
-  justify-content: space-around;
-  width: 60%;
-  border: solid 1px #39ff14;
-  margin: 0 auto;
-  max-height: 400px;
-  padding: 15px;
-  border-radius: 5px;
+  inline-size: 75rem;
+  block-size: 38rem;
+  overflow: hidden;
+  gap: 3rem;
+  background: rgba(1, 18, 33, 0.7);
+  border: 1px solid #0f011b;;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-block-start: 3.5rem;
   color: #39ff14;
+  
+ 
 }
 
 .imgConten {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  
 }
+
+.imgConten img {
+  inline-size: 19rem;
+  block-size: 19rem;
+  margin-inline-start: 4rem;
+  border-radius: 0.5rem;
+  box-shadow: 10px 12px 20px #dcb278;
+  transition: all 0.2s;
+}
+
+.imgConten img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  box-shadow: 5px 5px 20px #dcb278;
+  /*
+    box-shadow: valor-horizonal valor-vertical difuminación color(si no lo ponemos, hereda el color de lafuente);
+  */
+}
+
+.imgConten h2 {
+  font-family: 'Merienda';
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+
 
 .details {
   display: flex;
   flex-direction: column;
-  
+  inline-size: 14rem;
+   
 }
 
 .details div {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+  font-family: 'Merienda';
+  font-weight: normal;
+}
+.details h3 {
+  font-size: 1.5rem;
 }
 
 .details p {
-  margin-left: 30px;
+  margin-left: 1rem;
+  font-size: 1.25rem;
 }

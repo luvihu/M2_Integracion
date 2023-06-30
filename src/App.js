@@ -1,15 +1,17 @@
 import './App.css';
 import Cards from './components/cards/Cards.jsx';
 import Nav from './components/nav/Nav.jsx';
-import logoRM from './img/logoRM.jpg';
+
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
 import Error from './components/error/Error.jsx';
-import LoginForm from './components/loginForm/loginForm';
-import Favorites from './components/favorites/favorites.jsx';
+import LoginForm from './components/loginForm/LoginForm';
+import Favorites from './components/favorites/Favorites.jsx';
+import { removeFavorite } from './redux/actions';
+import { useDispatch } from 'react-redux';
+
 
 
 
@@ -20,34 +22,42 @@ function App() {
    const location = useLocation();
    const navigate = useNavigate();
    let [access, setAccess] = useState(false);
+   const dispatch = useDispatch();
+
 
    const EMAIL = 'luvillogas@gmail.com';
    const PASSWORD = 'hola1379';
 
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
-         .then(response => response.data)
+      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+         .then(response => response.json())
          .then((data) => {
             if (data.name && !characters.find((charater) => charater.id === data.id)) {
                setCharacters((oldChars) => [...oldChars, data]);
             } else {
-               window.alert('¡No hay personajes con este ID!');
+               alert('¡No hay personajes con este ID!');
             }
          });
    }
    // id es lo q escribe el usuario
    // axios es una libreria, similar al fetch
    // se instala en la carpeta npm i axios
+   // !characters.find((charater) => charater.id === data.id), no se repita los elem llamados
 
    const onClose = (id) => {
-      let deleted = characters.filter((elem) => elem.id !== Number(id))
+
+     let deleted = characters.filter((elem) => elem.id !== Number(id))
+      
       setCharacters(deleted);
+      dispatch(removeFavorite(id));
+
    }
 
    function randomHandler() {
       let haveIt = [];
 
       let random = (Math.random() * 826).toFixed();
+      // toFixed(); devuelve nro. redondeado, si colocas algn nro dentro del parentesis, devuelve entero con cantidad de nros decimales.
 
       random = Number(random);
 
@@ -59,7 +69,7 @@ function App() {
                if (data.name) {
                   setCharacters((oldChars) => [...oldChars, data]);
                } else {
-                  window.alert("No hay personajes con ese ID");
+                  alert("No hay personajes con ese ID");
                }
             });
       } else {
@@ -85,12 +95,11 @@ function App() {
 
    return (
       <div className='App'>
-         <img className="logo" src={logoRM} alt="logo-Rick-Morty" />
-
+        
          {location.pathname !== "/" && <Nav onSearch={onSearch} random={randomHandler} setAccess={setAccess}></Nav>}
 
          <Routes>
-            <Route path='/' element={<LoginForm login={loginHandler} />}></Route>
+            <Route path='/' element={<LoginForm loginHandler={loginHandler} />}></Route>
             <Route path='/home'
                element={<Cards characters={characters} onClose={onClose} />} ></Route>
             <Route path='/about' element={<About />} ></Route>
@@ -103,5 +112,7 @@ function App() {
       </div>
    );
 }
+
+
 
 export default App;

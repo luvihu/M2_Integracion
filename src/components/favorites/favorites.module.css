@@ -1,0 +1,33 @@
+
+.cardFav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 2rem;
+  block-size:auto;
+  max-inline-size: 85rem;
+  margin-block-start: 1.5rem;
+}
+
+.selectBtn {
+  display: flex;
+  gap: 4rem;
+  position: sticky;
+  top: 9.5rem;
+  z-index: 1;
+  backdrop-filter: blur(4.5px);
+   
+  
+}
+
+.selectBtn select {
+  background-color: #7f1b8a;
+  color: #d4dfd6;
+  font-style: italic;
+  border-radius: 0.25rem;
+  border: 1px solid #066849;
+  block-size: 2rem;
+  font-size: 18px;
+  outline: none;
+  
+} 
